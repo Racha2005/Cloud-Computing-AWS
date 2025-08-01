@@ -1,10 +1,10 @@
-**🌩️ AWS S3 Bucket Configuration and Public Access – Cloud Computing Project**
+# 🌩️ AWS S3 Bucket Configuration and Public Access – Cloud Computing Project
 
 This project documents a hands-on exploration of Amazon Web Services (AWS) S3 (Simple Storage Service) for creating, managing, and configuring publicly accessible cloud storage.
 
 ---
 
-**🎯 Objective**
+## 🎯 Objective
 
 🔹 Create multiple globally unique S3 buckets  
 🔹 Upload files to cloud storage  
@@ -14,7 +14,7 @@ This project documents a hands-on exploration of Amazon Web Services (AWS) S3 (S
 
 ---
 
-**🪣 Buckets Created**
+## 🪣 Buckets Created
 
 📦 bucket-nrcloud-x557 – Used for testing and cloud experimentation  
 📦 archive-storage-aws722 – Archive and backup storage  
@@ -23,7 +23,7 @@ This project documents a hands-on exploration of Amazon Web Services (AWS) S3 (S
 
 ---
 
-**📂 Files Included**
+## 📂 Files Included
 
 🗂️ bucket-nrcloud-x557-policy.json – Public-read bucket policy for testing bucket  
 🗂️ archive-storage-aws722-policy.json – Public-read bucket policy for archive storage  
@@ -32,7 +32,7 @@ Each policy grants read-only public access (s3:GetObject) to all objects inside 
 
 ---
 
-**🔐 AWS Concepts Explored**
+## 🔐 AWS Concepts Explored
 
 🛡️ IAM (Identity and Access Management)  
 ✅ Used to control access to AWS services and resources  
@@ -41,7 +41,7 @@ Each policy grants read-only public access (s3:GetObject) to all objects inside 
 
 ---
 
-**📜 Bucket Policies**
+## 📜 Bucket Policies
 
 ✅ Attached directly to individual S3 buckets  
 ✅ Allow or restrict actions like GetObject, PutObject  
@@ -49,7 +49,7 @@ Each policy grants read-only public access (s3:GetObject) to all objects inside 
 
 ---
 
-**🚫 Public Access Settings**
+## 🚫 Public Access Settings
 
 ✅ AWS blocks all public access by default  
 ✅ Disabled “Block Public Access” setting manually  
@@ -57,7 +57,7 @@ Each policy grants read-only public access (s3:GetObject) to all objects inside 
 
 ---
 
-**🖼️ Public File Access Examples**
+## 🖼️ Public File Access Examples
 
 📁 Bucket 1: bucket-nrcloud-x557  
 🖼️ Image Name: blue-moon-crystal-lake.jpg  
@@ -73,7 +73,7 @@ https://archive-storage-aws722.s3.ap-south-1.amazonaws.com/PurpleSky.jpg
 
 ---
 
-**💡 Key Learnings**
+## 💡 Key Learnings
 
 ✨ How to create and manage S3 buckets using AWS Console  
 ✨ Difference between s3:// (CLI path) and https:// (browser-accessible URL)  
@@ -83,9 +83,36 @@ https://archive-storage-aws722.s3.ap-south-1.amazonaws.com/PurpleSky.jpg
 
 ---
 
-**🏷️ Keywords**
+## 🏷️ Keywords
 
 🔸 AWS   🔸 S3   🔸 IAM   🔸 Cloud Storage   🔸 Public Access  
 🔸 JSON Policy   🔸 Permissions   🔸 Cloud Computing Practice
 
 ---
+
+# AWS S3 Bucket – Public Access Configuration
+
+## 🔧 What This Contains
+
+- ✅ A sample S3 bucket policy that grants **public read access** to all files inside the bucket.
+- ✅ Notes on IAM and S3 permissions
+- ✅ Link to test the uploaded public object
+
+---
+
+## 📄 Sample Policy File: `s3-public-access-policy.json`
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadAccess",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::aws-storage-bucket-330/*"
+    }
+  ]
+}
+
